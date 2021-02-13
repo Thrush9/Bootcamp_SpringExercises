@@ -1,0 +1,20 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="foodbean" class="com.stackroute.foodapp.model.FoodItem" scope="prototype">
+ <property name="price" value="200"></property>
+ <property name="itemname" value="Biryani"></property>
+</bean>
+
+<bean id="billbean" class="com.stackroute.foodapp.model.Bill" scope="prototype">
+ <property name="billno" value="T0987"></property>
+ <property name="item" ref="foodbean"></property>
+</bean>
+
+<bean id="hotelbean" class="com.stackroute.foodapp.model.Hotel" scope="singleton" autowire="byType">
+ <property name="name" value="ITC"></property>
+ <property name="location" value="Hyderabad"></property>
+</bean>
+
+</beans>	
